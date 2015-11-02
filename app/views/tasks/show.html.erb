@@ -4,7 +4,9 @@
   <strong>Content:</strong>
   <!-- This line of ruby below takes the variable @task from the set_task action that found the task with the correct id number, then displays it's content --> 
   <%= @task.content %>
+  <strong>State:</strong>
+  <%= @task.state %>
 </p>
-
+<!--  click on edit to send us to the edit_task page, specifically for the task currently assigned to @task -->
 <%= link_to 'Edit', edit_task_path(@task) %> |
 <%= link_to 'Back', tasks_path %>

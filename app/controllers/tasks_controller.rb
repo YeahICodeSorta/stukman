@@ -8,7 +8,9 @@ class TasksController < ApplicationController
   # GET /tasks.json
   def index # links to task view index.html
 
-    @tasks = current_user.tasks #gets all the task classes in the database and assigns
+    @to_do = current_user.tasks.where(state: "to_do")
+    @doing = current_user.tasks.where(state: "doing")
+    @done = current_user.tasks.where(state: "done") #gets all the task classes in the database and assigns
   end                 # them to the variable @tasks
 
   # GET /tasks/1
@@ -79,6 +81,6 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:content)
+      params.require(:task).permit(:content, :state)
     end
 end
