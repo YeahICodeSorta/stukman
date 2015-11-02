@@ -1,19 +1,26 @@
 class TasksController < ApplicationController
+  #for all the actions here: show, edit, update, destroy, the 
+  #app will run the action set_task
+  before_action :authenticate_user!
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   # GET /tasks
   # GET /tasks.json
-  def index
-    @tasks = Task.all
-  end
+  def index # links to task view index.html
+
+    @tasks = current_user.tasks #gets all the task classes in the database and assigns
+  end                 # them to the variable @tasks
 
   # GET /tasks/1
   # GET /tasks/1.json
-  def show
+  def show 
+
   end
 
   # GET /tasks/new
   def new
+    #assigns empty task to @task variable, then renders it in the
+    #file new.html.erb
     @task = Task.new
   end
 
@@ -24,7 +31,7 @@ class TasksController < ApplicationController
   # POST /tasks
   # POST /tasks.json
   def create
-    @task = Task.new(task_params)
+    @task = current_user.tasks.new(task_params)
 
     respond_to do |format|
       if @task.save
@@ -64,7 +71,10 @@ class TasksController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_task
-      @task = Task.find(params[:id])
+      #this action will find the task with the correct id, and set it
+      # to variable @task. This var will then be used in the appropriate
+      #view which called this action, for example: show.html.erb
+      @task = Task.find(params[:id]) 
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
