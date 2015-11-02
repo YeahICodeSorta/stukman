@@ -7,24 +7,12 @@
     <tr>
       <th>Content</th>
       <th> State</th>
-      <th colspan="3"></th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
   <tbody>
-  <!--The ruby code below pulls the variable @tasks from the 
-  controller which contains all our saved tasks, and creates
-  a loop which says for each task, make a new table row, with all these different cells -->
-    <% @to_do.each do |task| %>
-      <tr>
-
-        <td><%=  task.content %></td> 
-        <td><%= task.state %></td>
-        <td><%= link_to 'Show', task %></td>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
-        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+     <%= render @to_do %>
   </tbody>
 </table>
 
@@ -37,7 +25,7 @@
     <tr>
       <th>Content</th>
       <th> State</th>
-      <th colspan="3"></th>
+      <th colspan="5"></th>
     </tr>
   </thead>
 
@@ -45,16 +33,7 @@
   <!--The ruby code below pulls the variable @tasks from the 
   controller which contains all our saved tasks, and creates
   a loop which says for each task, make a new table row, with all these different cells -->
-    <% @doing.each do |task| %>
-      <tr>
-
-        <td><%=  task.content %></td> 
-        <td><%= task.state %></td>
-        <td><%= link_to 'Show', task %></td>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
-        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    <%= render @doing %>
   </tbody>
 </table>
 
@@ -67,7 +46,7 @@
     <tr>
       <th>Content</th>
       <th> State</th>
-      <th colspan="3"></th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
@@ -75,16 +54,7 @@
   <!--The ruby code below pulls the variable @tasks from the 
   controller which contains all our saved tasks, and creates
   a loop which says for each task, make a new table row, with all these different cells -->
-    <% @done.each do |task| %>
-      <tr>
-
-        <td><%=  task.content %></td> 
-        <td><%= task.state %></td>
-        <td><%= link_to 'Show', task %></td>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
-        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    <%= render @done %>
   </tbody>
 </table>
 
