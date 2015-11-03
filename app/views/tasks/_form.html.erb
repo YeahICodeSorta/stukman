@@ -1,14 +1,13 @@
 <!--Puts in the @task var which it gets from either show or edit
 pages, and inputs it into this form, then performs each method on it -->
-<%= simple_form_for(@task) do |f| %>
+<%= simple_form_for(@task, html: {class: "form-signin"}) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :content %>
-    <%= f.input :state %>
-  </div>
+     <%= f.input :content, label: false, required: true, autofocus: true, input_html: {class: "form-control"}, placeholder: "Write your goals/plans/activies." %>
+    
+  
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+  
+    <%= f.button :submit, class: "btn btn-lg btn-primary btn-block"%>
+
 <% end %>

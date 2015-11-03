@@ -1,7 +1,7 @@
-<h1>Editing Task</h1>
+<h1 class="text-center">Editing Task</h1>
 
  <!-- This line of ruby below takes the variable @task from the set_task action that found the task with the correct id number, then displays it's content --> 
 <%= render 'form' %>
 
-<%= link_to 'Show', @task %> |
-<%= link_to 'Back', tasks_path %>
+<%= link_to 'Show', @task, class: "btn btn-md btn-info" %> |
+<%= link_to 'Back', tasks_path, class: "btn btn-md btn-success" %>
