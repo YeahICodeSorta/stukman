@@ -9,6 +9,10 @@
         <span class="icon-bar"></span>
       </button>
       <%= link_to "<i class='fa fa-circle-o-notch'></i> Stukman".html_safe, root_path, class: "navbar-brand" %>
+      <% if current_user %>
+      <%= link_to 'New Task', new_task_path, class: "btn btn-primary pull-right" %>
+      <% end %>
+
      
     </div>
 
