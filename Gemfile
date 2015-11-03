@@ -52,3 +52,5 @@ gem 'font-awesome-rails'
 gem 'simple_form'
 
 gem 'devise'
+
+gem 'auto_html' # run bundle install in terminal to install gems
