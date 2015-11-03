@@ -1,62 +1,24 @@
-<p id="notice"><%= notice %></p>
 
-<h1>To Do</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Content</th>
-      <th> State</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-     <%= render @to_do %>
-  </tbody>
-</table>
+
+<div class="row">
+  <div class="col-md-4"><h1 class="text-center">To Do</h1>
+  <%= render @to_do %>
+   </div>
+  <div class="col-md-4 "><h1 class="text-center">Doing</h1>
+  <%= render @doing %>
+  </div>
+  <div class="col-md-4 "><h1 class="text-center">Done</h1>
+  <%= render @done %>
+   </div>
 
 <br>
 
-<h1>Doing</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Content</th>
-      <th> State</th>
-      <th colspan="5"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-  <!--The ruby code below pulls the variable @tasks from the 
-  controller which contains all our saved tasks, and creates
-  a loop which says for each task, make a new table row, with all these different cells -->
-    <%= render @doing %>
-  </tbody>
-</table>
 
-<br>
 
-<h1>Done</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Content</th>
-      <th> State</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-  <!--The ruby code below pulls the variable @tasks from the 
-  controller which contains all our saved tasks, and creates
-  a loop which says for each task, make a new table row, with all these different cells -->
-    <%= render @done %>
-  </tbody>
-</table>
 
 
 <!--Creates a link to the new task page using the route new_task -->
